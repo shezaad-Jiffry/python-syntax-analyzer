@@ -1,0 +1,39 @@
+'''
+Modulrized the token codes into one convienant file!
+'''
+
+# Character classes
+EOF = -1
+LETTER = 0
+DIGIT = 1
+UNDERSCORE = 2
+UNKNOWN = 99
+
+# Token codes
+INT_LIT = 10
+FLOAT_LIT = 12
+IDENT = 11
+STR_LIT = 13
+ASSIGN_OP = 20
+ADD_OP = 21
+SUB_OP = 22
+MULT_OP = 23
+DIV_OP = 24
+LEFT_PAREN = 25
+RIGHT_PAREN = 26
+LEFT_BRACE = 27
+RIGHT_BRACE = 28
+SEMICOLON = 29
+LESS_THAN = 30
+GREATER_THAN = 31
+EQUALS = 32
+NOT_EQUALS = 33
+AND_OP = 34
+OR_OP = 35
+IF = 36
+ELSE = 37
+FOR = 38
+WHILE = 39
+COMMENT = 40
+QUESTION_MARK = 41
+COLON = 42
