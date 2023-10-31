@@ -39,7 +39,7 @@ def check_balanced(tokens):
                     error = "syntax_analyzer_error - Missing '{' at line " + str(line)
                     raise Exception(error)
                 else:
-                    error = "syntax_analyzer_error - Unmatched closing '(' at line "+  str(line)
+                    error = "syntax_analyzer_error - Unmatched closing ')' at line "+  str(line)
                     raise Exception(error)
             elif open == LEFT_BRACE and token != RIGHT_BRACE:
                 if token == RIGHT_PAREN:
