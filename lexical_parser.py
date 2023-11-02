@@ -26,9 +26,9 @@ def check_balanced(tokens):
             if stack.is_empty():
                 
                 if(token == RIGHT_BRACE):
-                    lex = '{'
+                    lex = '}'
                 elif(token == RIGHT_PAREN):
-                    lex = '('
+                    lex = ')'
                 error = "syntax_analyzer_error - Missing '" +  lex +  "' at line " + str(line)
                 raise Exception(error)
             else:
@@ -36,17 +36,20 @@ def check_balanced(tokens):
             
             if open == LEFT_PAREN and token != RIGHT_PAREN:
                 if token == RIGHT_BRACE:
-                    error = "syntax_analyzer_error - Missing '{' at line " + str(line)
+                    error = "syntax_analyzer_error - Unmatched closing '}' at line "+  str(line)
+                    
                     raise Exception(error)
                 else:
-                    error = "syntax_analyzer_error - Unmatched closing ')' at line "+  str(line)
-                    raise Exception(error)
-            elif open == LEFT_BRACE and token != RIGHT_BRACE:
-                if token == RIGHT_PAREN:
                     error = "syntax_analyzer_error - Missing '(' at line " + str(line)
                     raise Exception(error)
+            elif open == LEFT_BRACE and token != RIGHT_BRACE:
+                
+                if token == RIGHT_PAREN:
+                    error = "syntax_analyzer_error - Unmatched closing ')' at line "+  str(line)
+                    
+                    raise Exception(error)
                 else:
-                    error = "syntax_analyzer_error - Unmatched closing '{' at line "+  str(line)
+                    error = "syntax_analyzer_error - Missing '{' at line " + str(line)
                     raise Exception(error)
     if not stack.is_empty():
         raise Exception(error)

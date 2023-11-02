@@ -4,7 +4,7 @@ import os
 directory = r'C:\Users\Shezaad\Desktop\csi 3120\assignment2\inputs'
 # for filename in os.listdir(directory):
 # print(filename)
-filename = directory +"/"+ "input33.txt"
+filename = directory +"/"+ "input3.txt"
 
 try:
     tokens,error = tokenize(filename)
