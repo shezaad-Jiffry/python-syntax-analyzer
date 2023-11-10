@@ -5,8 +5,7 @@
 if (choice <= 1.5) {
     choice = 1.5;
     for(String statement in file){
-        end = ";"
-        ;
+        end = ";";
         test = 2.6 + 3.7;
     }
     while(function_exists()){

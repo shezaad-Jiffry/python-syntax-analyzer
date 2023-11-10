@@ -16,20 +16,22 @@ def check_balanced(tokens):
     '''
     global error
     for token, lex, line in tokens:
+
         #push all left onto stack
         if token in [LEFT_BRACE, LEFT_PAREN]:
             
             stack.push((token,line))
         #if we encounter a right symbol we now check validity
+        
         elif token in [RIGHT_BRACE,RIGHT_PAREN]:
             #if our stack is empty and we find a right symbol first error
             if stack.is_empty():
                 
                 if(token == RIGHT_BRACE):
-                    lex = '}'
+                    error = "syntax_analyzer_error - Unmatched closing '}' at line " + str(line)
                 elif(token == RIGHT_PAREN):
-                    lex = ')'
-                error = "syntax_analyzer_error - Missing '" +  lex +  "' at line " + str(line)
+     
+                    error = "syntax_analyzer_error - Missing '(' at line " + str(line)
                 raise Exception(error)
             else:
                 open, open_line = stack.pop() # pop the stack and parse if the right symbol matches the left
@@ -45,7 +47,7 @@ def check_balanced(tokens):
             elif open == LEFT_BRACE and token != RIGHT_BRACE:
                 
                 if token == RIGHT_PAREN:
-                    error = "syntax_analyzer_error - Unmatched closing ')' at line "+  str(line)
+                    error = "syntax_analyzer_error - Missing '(' at line " + str(line)
                     
                     raise Exception(error)
                 else:

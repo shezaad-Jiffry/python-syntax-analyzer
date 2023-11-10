@@ -47,7 +47,7 @@ def getNonBlank():
 
 def lex():
     global lexeme, nextToken, charClass, error,lineNumber
-    print(lexeme)
+
     tokens = []
     while nextToken != EOF:
         lexeme = ''
